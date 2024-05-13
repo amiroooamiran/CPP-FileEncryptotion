@@ -84,3 +84,10 @@ void encryptDirectory(std::string directoryPath) {
     std::cerr << "Error opening directory: " << directoryPath << std::endl;
   }
 }
+
+
+int main() {
+  // Encryption directory
+  encryptDirectory("/home/Au5t1n/Desktop/file_encryption/datas/");
+  return 0;
+}
