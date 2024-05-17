@@ -1,12 +1,24 @@
 #include "directory-encryption.cpp"
+#include "sys-check.cpp"
 #include <cstring>
 #include <dirent.h>
 #include <string>
 #include <sys/stat.h>
 
 int main() {
+  PlatformGreeting platformGreeting;
   DirectoryEncryptor directoryEncryptor;
-  // Encryption directory
-  directoryEncryptor.encrypt("/home/Au5t1n/Desktop/file_encryption/datas/");
+
+  // Get the home directory
+  std::string homeDirectory = platformGreeting.getHomeDirectory();
+
+  // Construct the path to the encryption directory on the desktop
+  std::string pathSeparator = platformGreeting.getPathSeparator();
+  std::string encryptionDirectory = homeDirectory + pathSeparator + "Desktop" +
+                                    pathSeparator + "datas" + pathSeparator;
+  std::cout << encryptionDirectory;
+  // Encrypt the directory
+  directoryEncryptor.encrypt(encryptionDirectory);
+
   return 0;
 }
